@@ -1,0 +1,15 @@
+
+# added files to ignore
+node_modules
+src/config.js
+package-lock.json
+NextJob
+
+.gitignore
+
+Results-Layout.png
+No-Results-Layout.png
+eslint.config.js
+vite.config.js
+public
+
