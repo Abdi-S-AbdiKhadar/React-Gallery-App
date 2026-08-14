@@ -13,7 +13,7 @@ const Search = (props)=> {
         let searchedValue = name.current.value;
         props.searchedWords(searchedValue);
 
-        let path = `/${searchedValue}`;
+        let path = `/search/${searchedValue}`;
         navigate(path);       
     }
     

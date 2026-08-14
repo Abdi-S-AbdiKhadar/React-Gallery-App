@@ -6,5 +6,4 @@ const NotFoundError404 = ()=> {
     </div>
   );
 }
-
 export default NotFoundError404;

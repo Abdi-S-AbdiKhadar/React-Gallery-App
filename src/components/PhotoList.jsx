@@ -1,29 +1,46 @@
-import {useParams, useLocation } from 'react-router-dom';
+
 import {useEffect } from 'react';
 
 import Photo from './Photo';
+import NotFoundError404 from './NotFoundError404';
+
 
 // renders all the photoes from Pixabay API.
 const PhotoList = (props) => {
-
-  const { name } = useParams();
-   useEffect(() => {
-    props.searchedWords(name); 
-  }, [name]);
   
+  useEffect(() => {
+    props.SearchedWord(props.title);
+  }, [props.title]);
+  
+
   let images =  null;
   if(props.data.length != 0) {
     images = props.data.map(hit => <Photo url ={hit.largeImageURL} key = {hit.id} /> );
   } 
 
-  return (
-    <div className ="photo-container">
-      <h2>{props.title}'s photos</h2>
-      <ul>
-        {images}
-      </ul>
-    </div>
+
+  if(props.data.length <= 0 ) {
+    return (
+       <div className ="photo-container">
+        <h3> Image unavailable. Please search again. </h3>
+      </div>
+      
     );
+  } else {
+     return (
+      <div className ="photo-container">
+        <h2>Images of : {props.title}</h2>
+        <ul>
+          {images}
+        </ul>
+      </div>
+      );
+
+  }
+
+ 
+  
+  
 }
 
 export default PhotoList;

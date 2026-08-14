@@ -1,5 +1,5 @@
 
-import {Outlet, NavLink, useParams } from 'react-router-dom';
+import {Outlet, NavLink} from 'react-router-dom';
 
 // renders the navigation.
 const Nav = (props)=> {
